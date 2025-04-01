@@ -1,6 +1,8 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index e87de753..c2bf18de 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -702,8 +702,6 @@
+@@ -138,8 +138,6 @@ include(Release)
  add_subdirectory(port)
  add_subdirectory(libtiff)
  add_subdirectory(tools)
@@ -9,3 +11,16 @@
  add_subdirectory(build)
  add_subdirectory(man)
  add_subdirectory(html)
+diff --git a/autogen.sh b/autogen.sh
+index 9ef71b53..72794977 100755
+--- a/autogen.sh
++++ b/autogen.sh
+@@ -10,7 +10,7 @@ autoconf
+ for file in config.guess config.sub
+ do
+     echo "$0: getting $file..."
+-    wget -q --timeout=5 -O config/$file.tmp \
++    wget -q --timeout=10 -O config/$file.tmp \
+       "https://git.savannah.gnu.org/cgit/config.git/plain/${file}" \
+       && mv config/$file.tmp config/$file \
+       && chmod a+x config/$file
